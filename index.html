@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -14,17 +17,17 @@
         theme: {
           extend: {
             fontFamily: {
-              volkhov: ['Volkhov', 'sans-serif'],
-              poppins: ['Poppins', 'sans-serif'],
-            }
-          }
-        }
-      }
+              volkhov: ["Volkhov", "sans-serif"],
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
   </head>
   <body class="bg-slate-200 overflow-x-hidden">
     <div
-      class="relative mx-auto mt-0 sm:px-12 md:px-20 space-y-12 md:space-y-20 w-full max-w-6xl min-h-screen bg-slate-200"
+      class="relative mx-auto mt-0 sm:px-12 md:px-20 space-y-12 md:space-y-20 w-full max-w-6xl min-h-screen bg-slate-100"
     >
       <img
         class="absolute top-0 right-0 w-[80%] md:w-[42%] max-w-none h-auto z-0 pointer-events-none"
@@ -86,38 +89,103 @@
           </select>
         </div>
       </nav>
+      <!-- hero section -->
+      <main class="relative z-10 flex flex-col md:flex-row justify-between items-center space-x-4 space-y-8 w-full shrink-0">
+        <div class="space-y-7 w-full md:w-[55%] lg:w-[45%] text-center md:text-left">
+          <p class="text-[#df6951] font-bold font-poppins  text-md md:text-[14px]">
+            BEST DESTINATIONS AROUND THE WORLD
+          </p>
+           <div class="relative text-slate-900 font-bold font-volkhov text-4xl  lg:text-6xl leading-tight">
+            <h2>Travel, <span class="relative inline-block">enjoy<img src="images/Decore (2).png" alt="underline" class="absolute left-0  bottom-[-4px] w-full  z-[-1]" /></span></h2>
+            <h2>and live a new</h2>
+            <h2 >and full life</h2>
+           </div>
+          <p class="text-slate-500 text-medium font-semibold font-poppins leading-relaxed text-center md:text-left mx-auto md:mx-0 max-w-md md:max-w-none px-6 md:px-0">
+            Built Wicket longer admire do barton vanity itself do in it.
+            Preferred to sportsmen it engrossed listening. Park gate sell they
+            west hard for the.
+          </p>
 
-      <section
+          <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-6 pt-2 ">
+            <button
+              class="w-fit whitespace-nowrap text-white font-medium border bg-yellow-400 rounded-2xl py-3 px-6 hover:bg-yellow-600 transition duration-500 ease-in-out"
+            >
+              Find out more
+            </button>
+            <button class="flex items-center gap-4 lg:gap-6 min-w-max flex-nowrap">
+              <!-- <span class="text-white border bg-red-400 rounded-full p-2 hover:bg-red-600 transition duration-500 ease-in-out">▶</span> -->
+              <div
+                class="bg-red-400 w-12 h-12 rounded-full flex items-center justify-center hover:bg-red-600 transition duration-500 ease-in-out"
+              >
+                <div
+                  class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent"
+                ></div>
+              </div>
+              <span class="text-gray-500 font-medium whitespace-nowrap">Play Demo</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="w-full md:w-[45%] lg:w-[55%] flex justify-center md:justify-end items-center relative">
+          <!-- <img src="images/Decore.png" alt="Decore "> -->
+          <img src="images/Image.png" alt="Travel" class="w-full h-auto  object-contain origin-right transform md:scale-110 lg:scale-100" />
+        </div>
+      </main>
+      <!-- hero section close -->
+
+
+      <!-- <section
         class="relative z-10 flex flex-col md:flex-row justify-between items-center px-5 md:px-12"
       >
-        <div class="space-y-7 w-full md:w-[50%] lg:w-[45%] text-center md:text-left">
+        <div
+          class="space-y-7 w-full md:w-[50%] lg:w-[45%] text-center md:text-left"
+        >
           <p
             class="text-[#DF6951] text-xs md:text-sm font-bold uppercase tracking-wider font-poppins"
           >
             Best Destinations Around The World
-          </p>
+          </p> -->
 
-          <div class="relative text-slate-900 text-4xl sm:text-5xl lg:text-6xl font-volkhov leading-tight font-normal">
-            Travel, <p class="relative inline-block">enjoy<img src="images/Decore (2).png" alt="underline" class="absolute left-0  bottom-[-4px] w-full  z-[-1]" />
+          <!-- <div
+            class="relative text-slate-900 text-4xl sm:text-5xl lg:text-6xl font-volkhov leading-[1.7] font-normal"
+          >
+            Travel,
+            <p class="relative inline-block">
+              enjoy
+              <img
+                src="images/Decore (2).png"
+                alt="underline"
+                class="absolute left-0 bottom-[-4px] w-full z-[-1]"
+              />
             </p>
-            <p>and live a new</p> 
+
+            <p>and live a new</p>
             <p>and full life</p>
-        
-        </div>
+          </div> -->
           <!-- <h2 class="text-4xl sm:text-5xl lg:text-6xl leading-tight font-bold text-[#181E4B] font-serif mb-6">
         Travel, enjoy and live a new and full life
       </h2> -->
+      <!-- <div class="relative text-slate-900 font-bold font-volkhov text-4xl  lg:text-6xl leading-tight">
+            <h2>Travel, <span class="relative inline-block">enjoy<img src="images/Decore (2).png" alt="underline" class="absolute left-0  bottom-[-4px] w-full  z-[-1]" /></span></h2>
+            <h2>and live a new</h2>
+            <h2 >and full life</h2>
+           </div>
+          <p class="text-slate-500 text-medium font-semibold font-poppins leading-relaxed text-center md:text-left mx-auto md:mx-0 max-w-md md:max-w-none px-6 md:px-0">
+            Built Wicket longer admire do barton vanity itself do in it.
+            Preferred to sportsmen it engrossed listening. Park gate sell they
+            west hard for the.
+          </p>
+ -->
 
-
-          <p
+          <!-- <p
             class="text-[#5E6282] sm:text-sm sm:text-left md:text-base leading-[1.7] lg:text-lg text-center items-center font-poppins"
           >
             Built Wicket longer admire do barton vanity itself do in it.
-            Preferred to sportsmen it engrossed listening. Park gate sell they 
+            Preferred to sportsmen it engrossed listening. Park gate sell they
             west hard for the.
-          </p>
+          </p> -->
 
-          <div class="grid md:grid-cols-2 items-center gap-6 justify-center">
+          <!-- <div class="grid md:grid-cols-2 items-center gap-6 justify-center">
             <img
               class="h-full cursor-pointer hover:scale-105 transition"
               src="images/CTA.png"
@@ -140,7 +208,7 @@
             alt="Traveller Girl"
           />
         </div>
-      </section>
+      </section> -->
       <!-- <section>
         <div class="text-center mb-12 md:mb-20">
           <p
@@ -176,7 +244,7 @@
         </div>
         <div class="bg-white rounded-[36px] p-6 text-center flex items-center">
           <img class="" src="Group 50.png" alt="group photo" />
-          <h3 class="text-lg md:text-xl font-semibold text-[#1E1D4C] mb-3">
+          <<h3 class="text-lg md:text-xl font-semibold text-[#1E1D4C] mb-3">
             Local Events
           </h3>
           <p class="text-gray-500 text-xs md:text-sm leading-relaxed">
@@ -556,17 +624,29 @@
                 <div
                   class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-slate-900 cursor-pointer"
                 >
-                  <img src="images/LEAF.png" alt="leaf" class="object-contain" />
+                  <img
+                    src="images/LEAF.png"
+                    alt="leaf"
+                    class="object-contain"
+                  />
                 </div>
                 <div
                   class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-slate-900 cursor-pointer"
                 >
-                  <img src="images/map icon.png" alt="map" class="object-contain" />
+                  <img
+                    src="images/map icon.png"
+                    alt="map"
+                    class="object-contain"
+                  />
                 </div>
                 <div
                   class="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center text-slate-900 cursor-pointer"
                 >
-                  <img src="images/send 2.png" alt="plane" class="object-contain" />
+                  <img
+                    src="images/send 2.png"
+                    alt="plane"
+                    class="object-contain"
+                  />
                 </div>
               </div>
 
@@ -806,7 +886,11 @@
             class="h-22 object-contain grayscale opacity-70 rounded-xl hover:opacity-100 hover:grayscale-0 transition duration-500 cursor-pointer"
           />
           <div class="bg-slate-80 px-8 rounded-xl shadow-xl">
-            <img src="images/image 29.png" alt="footer" class="h-20 object-contain" />
+            <img
+              src="images/image 29.png"
+              alt="footer"
+              class="h-20 object-contain"
+            />
           </div>
 
           <img
@@ -847,9 +931,7 @@
         </div>
          <img src="Group 5.png" alt="spot3" class="absolute -bottom-6 right-0 md:-bottom-8 md:-right-14 h-16 md:h-24 z-0"> 
       </div>  -->
-      <div
-        class="max-w-5xl mx-auto relative px-6 md:px-0 py-10 bg-purple-50"
-      >
+      <div class="max-w-5xl mx-auto relative px-6 md:px-0 py-10 bg-purple-50">
         <div
           class="relative min-h-[240px] bg-purple-40 rounded-xl rounded-tl-[70px] overflow-hidden flex items-center justify-center px-6"
         >
@@ -881,9 +963,7 @@
               offers about Jadoo
             </h2>
 
-            <div
-              class="flex items-center justify-center gap-4 max-w-[530px]"
-            >
+            <div class="flex items-center justify-center gap-4 max-w-[530px]">
               <div
                 class="flex items-center gap-3 bg-white h-12 px-5 flex-1 rounded-lg border border-slate-100"
               >

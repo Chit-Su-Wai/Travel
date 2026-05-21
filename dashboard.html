@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex relative min-h-screen overflow-x-hidden">
+      <!-- Mobile Overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black/40 z-30 hidden md:hidden"
+    ></div>
+    <!-- side bar -->
+    <aside
+      id="sidebar"
+      class="fixed left-0 top-0 z-40 h-screen w-56 bg-slate-950 text-white transform -translate-x-full transition-transform duration-300 md:translate-x-0"
+    >
+      <div
+        class="h-16 flex items-center justify-between px-2 border-b border-slate-800"
+      >
+        <h1 class="flex items-center text-xl font-bold text-white">
+          <img
+            src="images/phone.png"
+            alt="phone"
+            class="w-7 h-6 rounded"
+          />MobileShop
+        </h1>
+        <button
+          id="closeBtn"
+          class="md:hidden text-white text-2xl hover:text-red-400"
+        >
+          X
+        </button>
+      </div>
+      <div class="px-4 py-6">
+        <p class="text-xs font-bold text-slate-500 uppercase mb-4">
+          Management
+        </p>
+        <nav class="space-y-2">
+          <a
+            href="#"
+            class="block rounded-lg bg-fuchsia-600 px-4 py-3 font-semibold"
+            >Dashboard</a
+          >
+          <a
+            href="#"
+            class="block rounded-lg px-4 py-3 text-slate-300 hover:bg-slate-800"
+            >Products</a
+          >
+          <a
+            href="#"
+            class="block rounded-lg px-4 py-3 text-slate-300 hover:bg-slate-800"
+            >Orders</a
+          >
+          <a
+            href="#"
+            class="block rounded-lg px-4 py-3 text-slate-300 hover:bg-slate-800"
+            >Users</a
+          >
+         
+          
+        
+        </nav>
+      </div>
+      <div class="absolute bottom-5 left-4 right-4">
+        <button
+          class="w-full rounded-lg bg-slate-800 py-3 font-semibold hover:bg-slate-700"
+        >
+          Logout
+        </button>
+      </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 w-full min-w-0
+    md:ml-56">
+      <!-- Header -->
+      <header
+        class="h-16 bg-white shadow-sm flex items-center gap-4 px-4 md:px-8"
+      >
+        <button
+          id="menuBtn"
+          class="md:hidden text-2xl bg-slate-100 px-3 py-2 rounded-lg"
+        >
+          ☰
+        </button>
+        <h2 class="text-xl font-bold text-slate-800">Dashboard</h2>
+      </header>
+      <!-- content -->
+      <section class="p-4 md:p-8 space-y-6">
+        <!-- card -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+          <div class="bg-white p-4 rounded-lg flex gap-4">
+            <div class="">
+              <img
+                src="images/money.png"
+                alt="money"
+                class="w-10 rounded bg-green-500 mt-2"
+              />
+            </div>
+            <div class="">
+              <p class="text-gray-500 text-sm">Total Sales</p>
+              <h3 class="text-2xl font-bold">$0.00</h3>
+            </div>
+          </div>
+          <div class="bg-white p-3 rounded-lg text-xl flex gap-3">
+            <div>
+              <img
+                src="images/shop.png"
+                alt="money"
+                class="w-10 rounded bg-blue-500 mt-2"
+              />
+            </div>
+            <div class="">
+              <p class="text-gray-500 text-sm">Total Orders</p>
+              <h3 class="text-2xl font-bold">0</h3>
+            </div>
+          </div>
+          <div class="bg-white p-3 rounded-lg text-xl flex gap-3">
+            <div>
+              <img
+                src="images/contact.png"
+                alt="money"
+                class="w-10 rounded bg-purple-500 mt-2"
+              />
+            </div>
+            <div class="">
+              <p class="text-gray-500 text-sm">Customers</p>
+              <h3 class="text-2xl font-bold">1</h3>
+            </div>
+          </div>
+          <div class="bg-white p-3 rounded-lg text-xl flex gap-3">
+            <div>
+              <img
+                src="images/warning.png"
+                alt="money"
+                class="w-10 rounded bg-red-500 mt-2"
+              />
+            </div>
+            <div class="">
+              <p class="text-gray-500 text-sm">Law Stock Items</p>
+              <h3 class="text-2xl font-bold">0</h3>
+            </div>
+          </div>
+        </div>
+        <!-- order -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+          <div class="flex items-center justify-between p-5 border-b">
+            <h3 class="text-lg font-bold">Recent Orders</h3>
+            <a href="#" class="text-sm text-fuchsia-600 font-semibold"
+              >View all >></a
+            >
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[700px] text-left">
+              <thead class="uppercase bg-gray-50 text-gray-500 text-sm">
+                <tr>
+                  <th class="p-4">Order ID</th>
+                  <th class="p-4">Customer</th>
+                  <th class="p-4">Date</th>
+                  <th class="p-4">Total</th>
+                  <th class="p-4">Status</th>
+                  <th class="p-4 text-right">
+                    <button class="text-gray-400 text-xl">⋮</button>
+                  </th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    </div>
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const closeBtn = document.getElementById("closeBtn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

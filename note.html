@@ -3,346 +3,294 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuietMind</title>
-
+    <title>Tailwind Note UI</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-
-  <body class="bg-[#f8f8f4] text-[#222] overflow-x-hidden">
-    <div class="min-h-screen lg:flex">
-      <!-- overlay -->
+  <body class="bg-slate-100">
+    <div class="flex relative min-h-screen overflow-x-hidden">
       <div
         id="overlay"
-        class="fixed inset-0 bg-black/40 z-30 hidden lg:hidden"
+        class="fixed inset-0 bg-black/40 z-40 hidden md:hidden"
       ></div>
 
-      <!-- sidebar -->
       <aside
         id="sidebar"
-        class="fixed lg:sticky lg:top-0 left-0 top-0 z-40 min-h-screen w-72 bg-[#f1f2ec] px-7 py-6 -translate-x-full lg:translate-x-0 transition duration-300 flex flex-col"
+        class="fixed md:static top-0 left-0 z-50 p-5 bg-slate-100 w-52 min-h-screen text-slate-700 -translate-x-full md:translate-x-0 transition duration-500 ease-in-out flex flex-col justify-between shrink-0 "
       >
-        <!-- logo -->
-        <div class="flex items-center justify-between mb-16">
-          <div class="flex items-center gap-3">
-            <div
-              class="w-11 h-11 rounded-xl bg-[#d6ead7] flex items-center justify-center text-xl"
-            >
-              🍃
+        <div class="space-y-6">
+          <div class="flex items-center gap-2">
+            <div class="bg-green-400/50 rounded-lg px-2 py-2">
+              <span class="text-xl text-emerald-800">🌱</span>
+            <!-- <h1 class="text-green-800 text-xl font-bold">QuietMind</h1> -->
             </div>
-
             <div>
-              <h1 class="text-2xl font-bold text-[#31533b]">QuietMind</h1>
-
-              <p class="text-sm text-gray-500">Beginner’s Haven</p>
+              <h1 class="text-green-800 text-xl font-bold">QuietMind</h1>
+            <p class="text-slate-400 text-sm font-medium">Beginner's Haven</p>
             </div>
+            <button
+            id="closeSidebar"
+            class="md:hidden text-slate-900 hover:text-white text-sm px-1 py-2"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
           </div>
 
-          <button id="closeBtn" class="lg:hidden text-2xl">×</button>
-        </div>
-
-        <!-- button -->
-        <button
-          class="w-full rounded-full bg-[#31533b] text-white py-4 font-bold mb-3"
-        >
-          + &nbsp; New Note
-        </button>
-
-        <!-- library -->
-        <p class="text-xs font-bold text-gray-500 uppercase mt-2 mb-4">
-          Library
-        </p>
-
-        <nav class="space-y-3">
-          <a
-            href="#"
-            class="flex items-center gap-3 rounded-lg bg-[#95b59b] px-4 py-4 font-semibold text-[#294431]"
+          <button
+            class="w-full bg-green-900 text-white px-4 py-2.5 rounded-full text-md font-medium"
           >
-            📄 Notes
+            + New Note
+          </button>
+
+          <div class="space-y-2">
+            <p
+              class="text-slate-400 uppercase font-bold text-[16px] tracking-wider px-2"
+            >
+              Library
+            </p>
+            <nav class="flex flex-col space-y-1">
+              <a
+                href=""
+                class="flex items-center gap-3 text-slate-600 text-md font-medium bg-green-500/20 rounded-xl px-3 py-2.5"
+              >
+                <span class="text-base shrink-0">📝</span>
+                <span>Notes</span>
+              </a>
+
+              <a
+                href=""
+                class="flex items-center gap-3 text-slate-500 hover:text-slate-700 text-md font-medium hover:bg-slate-200/60 rounded-xl px-3 py-2.5 transition-colors"
+              >
+                <span class="text-base shrink-0">📁</span>
+                <span>Categories</span>
+              </a>
+            </nav>
+          </div>
+
+          <div class="space-y-2">
+            <p
+              class="text-slate-400 uppercase font-bold text-[16px] tracking-wider px-2"
+            >
+              Favorites
+            </p>
+
+            <ul class="flex flex-col space-y-1 list-disc pl-7 pr-3">
+              <li
+                class="marker:text-green-800 marker:text-xl text-slate-500 hover:text-slate-700 font-medium rounded-xl hover:bg-slate-200/60 transition-colors"
+              >
+                <a
+                  href=""
+                  class="inline-flex items-center py-2 text-md leading-none w-full"
+                >
+                  Personal
+                </a>
+              </li>
+
+              <li
+                class="marker:text-green-500 marker:text-xl text-slate-500 hover:text-slate-700 font-medium rounded-xl hover:bg-slate-200/60 transition-colors"
+              >
+                <a
+                  href=""
+                  class="inline-flex items-center py-2 text-md leading-none w-full"
+                >
+                  Creative Work
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-slate-200 pt-4 flex flex-col space-y-1">
+          <a
+            href=""
+            class="flex items-center gap-3 text-slate-500 hover:text-slate-700 text-md font-medium hover:bg-slate-200/60 rounded-xl px-3 py-2 transition-colors"
+          >
+            <span class="text-base shrink-0">⚙️</span>
+            <span>Settings</span>
           </a>
 
           <a
-            href="#"
-            class="flex items-center gap-3 rounded-lg px-4 py-4 font-semibold text-gray-600 hover:bg-white"
+            href=""
+            class="flex items-center gap-3 text-slate-500 hover:text-slate-700 text-md font-medium hover:bg-slate-200/60 rounded-xl px-3 py-2 transition-colors"
           >
-            📁 Categories
+            <span class="text-base shrink-0">📥</span>
+            <span>Archive</span>
           </a>
-        </nav>
 
-        <!-- favorites -->
-        <div class="flex-1">
-          <p class="text-xs font-bold text-gray-500 uppercase mt-20 mb-5">
-            Favorites
-          </p>
-
-          <div class="space-y-5 text-gray-600">
-            <p>
-              <span class="text-slate-500">●</span>
-              &nbsp; Personal
-            </p>
-
-            <p>
-              <span class="text-green-500">●</span>
-              &nbsp; Creative Work
-            </p>
-          </div>
-        </div>
-
-        <!-- bottom -->
-        <div
-          class="mt-auto mb-8 border-t pt-8 space-y-6 text-gray-600 font-semibold"
-        >
-          <p>⚙️ &nbsp; Settings</p>
-
-          <p>▣ &nbsp; Archive</p>
-
-          <p>❔ &nbsp; Help</p>
+          <a
+            href=""
+            class="flex items-center gap-3 text-slate-500 hover:text-slate-700 text-md font-medium hover:bg-slate-200/60 rounded-xl px-3 py-2 transition-colors"
+          >
+            <span class="text-base shrink-0">❓</span>
+            <span>Help</span>
+          </a>
         </div>
       </aside>
 
-      <!-- main -->
-      <main class="flex-1 min-w-0">
-        <!-- header -->
-        <header class="h-20 flex items-center justify-between px-5 lg:px-8">
-          <div class="flex items-center gap-4 flex-1">
-            <!-- menu -->
-            <button
-              id="menuBtn"
-              class="lg:hidden bg-white rounded-lg px-3 py-2 shadow"
-            >
-              ☰
-            </button>
-
-            <!-- search -->
-            <div
-              class="hidden sm:flex items-center gap-3 bg-white rounded-full px-5 py-3 w-full max-w-2xl shadow-sm"
-            >
-              🔍
-
+      <!-- main content -->
+      <main class="bg-slate-50 space-y-8 h-screen overflow-y-auto">
+        <header class="sticky top-0 z-20 bg-white  flex justify-between items-center gap-4 px-8 py-4">
+          <div class="flex items-center gap-2 w-full max-w-xl">
+            <div>
+              <button
+                id="openSidebar"
+                class="md:hidden text-slate-600 focus:outline-none"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="relative  w-full">
+              <span class="absolute inset-y-0 left-3 flex items-center text-slate-400">🔍</span>
               <input
-                type="text"
-                placeholder="Search your thoughts..."
-                class="w-full bg-transparent outline-none text-gray-500"
+              type="text"
+              placeholder="Search your thoughts..."
+              class="bg-slate-200 rounded-full w-full py-2 pl-10 pr-4 "
+            />
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 shrink-0">
+            <button class="text-green-400 px-4 py-2.5 text-md font-bold hidden sm:block">
+              + New Note
+            </button>
+            <div class="w-8 h-8 rounded-full border overflow-hidden border-slate-300">
+              <img
+                src="images/notepro.png"
+                alt="profile"
+                class="w-full h-full object-cover"
               />
             </div>
           </div>
-
-          <!-- profile -->
-          <div class="flex items-center gap-6">
-            <button class="font-bold text-[#31533b]">+ &nbsp; New Note</button>
-
-            <div class="w-11 h-11 rounded-full bg-gray-300">
-              <img src="images/notepro.png" alt="noteprofile" />
-            </div>
-          </div>
         </header>
-
-        <!-- content -->
-        <section class="px-5 lg:px-8 pb-8">
-          <!-- title -->
-          <div
-            class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mt-10 mb-10"
-          >
-            <div>
-              <h2 class="text-4xl md:text-6xl font-bold tracking-tight">
-                Good morning, Julian.
-              </h2>
-
-              <p class="text-gray-500 text-lg mt-3">
-                Take a breath. What’s on your mind today?
+        <!-- main section -->
+        <div class="space-y-8 px-8 py-4">
+          <div class="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-end">
+            <div class="space-y-2">
+              <h1 class="text-3xl font-bold">Good morning, Julian.</h1>
+              <p class="text-slate-600">
+                Take a breath.What's on your mind today?
               </p>
             </div>
 
-            <!-- buttons -->
-            <div class="flex gap-4">
-              <button class="bg-[#ededeb] rounded-full px-6 py-3 text-gray-600">
-                ☰ Recent
+            <div class="flex items-center gap-4 ">
+              <button class="bg-slate-200 rounded-full px-6 flex items-center gap-1.5 py-1">
+                <!-- <img src="images/order.png" alt="order" class="w-6 h-6 object-cover"> -->
+                <span>🧾</span>Recent
               </button>
-
-              <button class="bg-[#ededeb] rounded-full px-6 py-3 text-gray-600">
-                ▦ Layout
+              <button class="bg-slate-200 rounded-full px-6 py-1 flex items-center gap-1.5">
+                <span>🎛</span>Layout
               </button>
             </div>
           </div>
 
-          <!-- cards -->
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
-            <!-- philosophy -->
-            <div
-              class="relative md:col-span-2 rounded-2xl p-8 md:p-12 min-h-[310px] overflow-hidden shadow-sm bg-[#f1f2ec]"
-            >
-              <!-- decoration -->
-              <div class="absolute right-16 top-16 opacity-60">
-                <!-- top shape -->
-                <div class="w-20 h-24 bg-[#e3e4de] rounded-[45%]"></div>
+          <!-- card section -->
+         
+          <section class="grid grid-cols-1 md:grid-cols-3  gap-6">
+        
+             <div class="md:col-span-2 bg-slate-100 rounded-lg p-8">
+            <div class="flex items-center gap-4 mb-4">
+                <span class="bg-slate-200 rounded-full px-4 py-1 text-slate-500">Creative Work</span>
+                <span class="text-slate-500">• 2 hours ago</span>
+            </div>
+            <div class="mb-12">
+                <h2 class="col-span-1 md:col-span-2 text-2xl font-medium mb-3">The Philosophy of Quiet Productivity</h2>
+            <p class="col-span-2 text-slate-500  leading-relaxed ">In a world that never stops shouting, there is a profound power in finding silence. This morning I'm reflecting on how we can build tools that don't demand attention, but rather reward it...</p>
+            </div>
+           
+            <div class="flex items-center gap-2">
+                <span class="bg-slate-200 rounded-full px-3 py-1.5 text-black inline-block text-xs">#mindfulness</span>
+                <span class="bg-slate-200 rounded-full px-3 py-1.5 text-black inline-block text-xs">#design-ethics</span>
+            </div>
+        </div>
 
-                <!-- middle -->
-                <div class="w-12 h-3 bg-[#e3e4de] rounded mt-2 ml-4"></div>
+        <div class="bg-white rounded-lg border p-6 overflow-hidden">
+            <div class="flex justify-between items-center">
+              <span class="text-slate-500 bg-slate-200  px-3 py-1.5 text-xs rounded-full ">Ideas</span>
+              <span class="text-slate-400 text-xs cursor-pointer">📌</span>
+            </div>
+            <div class="space-y-2 mb-6 mt-4">
+               <h3 class="text-xl ">Morning Ritual Ideas</h3>
+            <ol class="text-gray-500 leading-relaxed list-decimal pl-4">
+                <li>Cold water therapy</li>
+                <li>5 minutes of focused breathing</li>
+                <li>Tea ceremony without screens...</li>
+            </ol>
+            </div>
 
-                <!-- bottom -->
-                <div class="w-8 h-2 bg-[#ecece8] rounded mt-1 ml-6"></div>
-              </div>
-              <div class="relative z-10">
-                <div class="flex items-center gap-4 mb-8">
-                  <span
-                    class="bg-[#eeeeeb] rounded-full px-5 py-2 text-sm text-gray-600"
-                  >
-                    Creative Work
-                  </span>
+            <span class="bg-slate-200 rounded-full px-3 py-1.5 text-xs text-black font-medium">#wellness</span>
+        </div>
 
-                  <span class="text-sm text-gray-500"> • 2 hours ago </span>
+          <div class="bg-slate-100 flex flex-col rounded-lg border overflow-hidden">
+            <!-- <img src="images/girl.png" class="w-full h-48 object-cover"> -->
+             <div class="h-40 bg-slate-200 relative">
+                  <img src="images/card.jpg" class="w-full h-full object-cover" alt="Office">
+                  <span class="absolute -bottom-3 left-5 bg-slate-400 text-white text-xs px-4 py-2 rounded-full ">Work</span>
                 </div>
-
-                <h3 class="text-2xl md:text-3xl font-bold mb-6 max-w-xl">
-                  The Philosophy of Quiet Productivity
-                </h3>
-
-                <p class="text-gray-500 leading-8 max-w-xl">
-                  In a world that never stops shouting, there is a profound
-                  power in finding silence. This morning I'm reflecting on how
-                  we can build tools that don’t demand attention, but rather
-                  reward it...
-                </p>
-
-                <div class="flex gap-3 mt-12 flex-wrap">
-                  <span
-                    class="bg-[#f1f1ef] rounded-full px-4 py-2 text-sm font-semibold"
-                  >
-                    #mindfulness
-                  </span>
-
-                  <span
-                    class="bg-[#f1f1ef] rounded-full px-4 py-2 text-sm font-semibold"
-                  >
-                    #design-ethics
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- ideas -->
-            <div class="bg-white rounded-2xl p-8 min-h-[310px] shadow-sm">
-              <div class="flex justify-between mb-7">
-                <span
-                  class="bg-[#e4f0e6] text-[#31533b] rounded-full px-4 py-1 text-sm font-semibold"
-                >
-                  Ideas
-                </span>
-
-                <span class="text-gray-500"> 📌 </span>
-              </div>
-
-              <h3 class="text-2xl font-semibold mb-4">Morning Ritual Ideas</h3>
-
-              <p class="text-gray-500 leading-8">
-                1. Cold water therapy <br />
-                2. 5 minutes of focused breathing <br />
-                3. Tea ceremony without screens...
-              </p>
-
-              <span
-                class="inline-block mt-9 bg-[#f1f1ef] rounded-full px-4 py-2 text-sm font-semibold"
-              >
-                #wellness
-              </span>
-            </div>
-
-            <!-- office -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
-              <!-- image area -->
-              <div class="h-44 bg-gray-200 relative">
-                <!-- put your image here -->
-                <img src="" class="w-full h-full object-cover">
-
-                <span
-                  class="absolute left-10 -bottom-3 bg-[#eeeeeb] rounded-full px-5 py-1 text-sm text-gray-600"
-                >
-                  Work
-                </span>
-              </div>
-
-              <div class="p-8 pt-10">
-                <h3 class="text-2xl font-semibold mb-4">
-                  Office Redesign Notes
-                </h3>
-
-                <p class="text-gray-500 leading-8">
-                  Need to prioritize ergonomic comfort and natural light
-                  diffusio...
-                </p>
-              </div>
-            </div>
-
-            <!-- grocery -->
-            <div class="bg-white rounded-2xl p-8 min-h-[250px] shadow-sm">
-              <span
-                class="bg-[#eeeeeb] rounded-full px-4 py-1 text-sm text-gray-600"
-              >
-                Personal
-              </span>
-
-              <h3 class="text-2xl font-semibold mt-7 mb-4">
-                Weekend Grocery List
-              </h3>
-
-              <p class="text-gray-500 leading-8">
-                <span class="text-green-600">•</span>
-                Fresh ginger & mint <br />
-
-                <span class="text-green-600">•</span>
-                Organic honey
-              </p>
-            </div>
-
-            <!-- project -->
-            <div class="bg-white rounded-2xl p-8 min-h-[250px] shadow-sm">
-              <div class="flex justify-between mb-7">
-                <span
-                  class="bg-[#eeeeeb] rounded-full px-4 py-1 text-sm text-gray-600"
-                >
-                  Work
-                </span>
-
-                <span class="text-sm text-gray-500"> Mar 12 </span>
-              </div>
-
-              <h3 class="text-2xl font-semibold mb-4">Project Alpha Review</h3>
-
-              <p class="text-gray-500 leading-8">
-                The feedback from the initial user group was surprisingly
-                positive regarding the soft-focus UI...
-              </p>
+            <div class="p-6">
+              <!-- <span class="bg-slate-200 rounded-full px-4 py-1 mb-4">Work</span> -->
+              <h3 class="text-xl mb-4 mt-4">Office Redesign Notes</h3>
+              <p class="text-gray-500 leading-relaxed">Need to prioritize ergonomic comfort and natural light diffusio...</p>
             </div>
           </div>
-        </section>
+
+          <div class="bg-white rounded-lg border p-6">
+            <span class="bg-slate-200 rounded-full px-3 py-1 mb-4">Personal</span>
+            <h3 class="text-xl mt-4 mb-4">Weekend Grocery List</h3>
+            <ul class="text-gray-500 leading-relaxed list-disc pl-4">
+              <li class="marker:text-green-800 marker:text-xl">Fresh ginger & mint</li>
+              <li class="marker:text-green-800 marker:text-xl">Organic honey</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-lg border p-6">
+            <div class="flex justify-between items-center">
+              <span class="bg-slate-200 rounded-full px-3 py-1 text-xs">Work</span>
+              <span class="text-slate-400 text-xs cursor-pointer">Mar 12</span>
+            </div>
+              <h3 class="text-xl mb-4 mt-4">Project Alpha Review</h3>
+              <p class="text-gray-500 leading-relaxed">The feedback from the initial user group was surprisingly positive regarding the soft-focus UI...</p>
+          </div>
+          </section>
+          <button class="md:hidden fixed bottom-5 right-5 z-30 bg-green-900 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl">
+            +
+          </button>     
       </main>
     </div>
-
     <script>
-      const menuBtn = document.getElementById("menuBtn");
-
-      const closeBtn = document.getElementById("closeBtn");
-
       const sidebar = document.getElementById("sidebar");
-
-      const overlay = document.getElementById("overlay");
-
-      function openSidebar() {
-        sidebar.classList.remove("-translate-x-full");
-
-        overlay.classList.remove("hidden");
+      const openSidebarBtn = document.getElementById("openSidebar");
+      const closeSidebarBtn = document.getElementById("closeSidebar");
+      const overlay= document.getElementById('overlay');
+function toggleSidebar() {
+        sidebar.classList.toggle("-translate-x-full");
+              overlay.classList.toggle('hidden');
       }
 
-      function closeSidebar() {
-        sidebar.classList.add("-translate-x-full");
-
-        overlay.classList.add("hidden");
-      }
-
-      menuBtn.addEventListener("click", openSidebar);
-
-      closeBtn.addEventListener("click", closeSidebar);
-
-      overlay.addEventListener("click", closeSidebar);
+      openSidebarBtn.addEventListener("click", toggleSidebar);
+      closeSidebarBtn.addEventListener("click", toggleSidebar);
+      overlay.addEventListener('click', toggleSidebar);
     </script>
   </body>
 </html>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuietMind</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#f8f8f4] text-[#222] overflow-x-hidden">
+    <div class="min-h-screen lg:flex">
+      <!-- overlay -->
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black/40 z-30 hidden lg:hidden"
+      ></div>
+
+      <!-- sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed lg:sticky lg:top-0 left-0 top-0 z-40 min-h-screen w-72 bg-[#f1f2ec] px-7 py-6 -translate-x-full lg:translate-x-0 transition duration-300 flex flex-col"
+      >
+        <!-- logo -->
+        <div class="flex items-center justify-between mb-16">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-11 h-11 rounded-xl bg-[#d6ead7] flex items-center justify-center text-xl"
+            >
+              🍃
+            </div>
+
+            <div>
+              <h1 class="text-2xl font-bold text-[#31533b]">QuietMind</h1>
+
+              <p class="text-sm text-gray-500">Beginner’s Haven</p>
+            </div>
+          </div>
+
+          <button id="closeBtn" class="lg:hidden text-2xl">×</button>
+        </div>
+
+        <!-- button -->
+        <button
+          class="w-full rounded-full bg-[#31533b] text-white py-4 font-bold mb-3"
+        >
+          + &nbsp; New Note
+        </button>
+
+        <!-- library -->
+        <p class="text-xs font-bold text-gray-500 uppercase mt-2 mb-4">
+          Library
+        </p>
+
+        <nav class="space-y-3">
+          <a
+            href="#"
+            class="flex items-center gap-3 rounded-lg bg-[#95b59b] px-4 py-4 font-semibold text-[#294431]"
+          >
+            📄 Notes
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center gap-3 rounded-lg px-4 py-4 font-semibold text-gray-600 hover:bg-white"
+          >
+            📁 Categories
+          </a>
+        </nav>
+
+        <!-- favorites -->
+        <div class="flex-1">
+          <p class="text-xs font-bold text-gray-500 uppercase mt-20 mb-5">
+            Favorites
+          </p>
+
+          <div class="space-y-5 text-gray-600">
+            <p>
+              <span class="text-slate-500">●</span>
+              &nbsp; Personal
+            </p>
+
+            <p>
+              <span class="text-green-500">●</span>
+              &nbsp; Creative Work
+            </p>
+          </div>
+        </div>
+
+        <!-- bottom -->
+        <div
+          class="mt-auto mb-8 border-t pt-8 space-y-6 text-gray-600 font-semibold"
+        >
+          <p>⚙️ &nbsp; Settings</p>
+
+          <p>▣ &nbsp; Archive</p>
+
+          <p>❔ &nbsp; Help</p>
+        </div>
+      </aside>
+
+      <!-- main -->
+      <main class="flex-1 min-w-0">
+        <!-- header -->
+        <header class="h-20 flex items-center justify-between px-5 lg:px-8">
+          <div class="flex items-center gap-4 flex-1">
+            <!-- menu -->
+            <button
+              id="menuBtn"
+              class="lg:hidden bg-white rounded-lg px-3 py-2 shadow"
+            >
+              ☰
+            </button>
+
+            <!-- search -->
+            <div
+              class="hidden sm:flex items-center gap-3 bg-white rounded-full px-5 py-3 w-full max-w-2xl shadow-sm"
+            >
+              🔍
+
+              <input
+                type="text"
+                placeholder="Search your thoughts..."
+                class="w-full bg-transparent outline-none text-gray-500"
+              />
+            </div>
+          </div>
+
+          <!-- profile -->
+          <div class="flex items-center gap-6">
+            <button class="font-bold text-[#31533b]">+ &nbsp; New Note</button>
+
+            <div class="w-11 h-11 rounded-full bg-gray-300">
+              <img src="images/notepro.png" alt="noteprofile" />
+            </div>
+          </div>
+        </header>
+
+        <!-- content -->
+        <section class="px-5 lg:px-8 pb-8">
+          <!-- title -->
+          <div
+            class="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-5 mt-10 mb-10"
+          >
+            <div>
+              <h2 class="text-4xl md:text-6xl font-bold tracking-tight">
+                Good morning, Julian.
+              </h2>
+
+              <p class="text-gray-500 text-lg mt-3">
+                Take a breath. What’s on your mind today?
+              </p>
+            </div>
+
+            <!-- buttons -->
+            <div class="flex gap-4">
+              <button class="bg-[#ededeb] rounded-full px-6 py-3 text-gray-600">
+                ☰ Recent
+              </button>
+
+              <button class="bg-[#ededeb] rounded-full px-6 py-3 text-gray-600">
+                ▦ Layout
+              </button>
+            </div>
+          </div>
+
+          <!-- cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
+            <!-- philosophy -->
+            <div
+              class="relative md:col-span-2 rounded-2xl p-8 md:p-12 min-h-[310px] overflow-hidden shadow-sm bg-[#f1f2ec]"
+            >
+              <!-- decoration -->
+              <div class="absolute right-16 top-16 opacity-60">
+                <!-- top shape -->
+                <div class="w-20 h-24 bg-[#e3e4de] rounded-[45%]"></div>
+
+                <!-- middle -->
+                <div class="w-12 h-3 bg-[#e3e4de] rounded mt-2 ml-4"></div>
+
+                <!-- bottom -->
+                <div class="w-8 h-2 bg-[#ecece8] rounded mt-1 ml-6"></div>
+              </div>
+              <div class="relative z-10">
+                <div class="flex items-center gap-4 mb-8">
+                  <span
+                    class="bg-[#eeeeeb] rounded-full px-5 py-2 text-sm text-gray-600"
+                  >
+                    Creative Work
+                  </span>
+
+                  <span class="text-sm text-gray-500"> • 2 hours ago </span>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-bold mb-6 max-w-xl">
+                  The Philosophy of Quiet Productivity
+                </h3>
+
+                <p class="text-gray-500 leading-8 max-w-xl">
+                  In a world that never stops shouting, there is a profound
+                  power in finding silence. This morning I'm reflecting on how
+                  we can build tools that don’t demand attention, but rather
+                  reward it...
+                </p>
+
+                <div class="flex gap-3 mt-12 flex-wrap">
+                  <span
+                    class="bg-[#f1f1ef] rounded-full px-4 py-2 text-sm font-semibold"
+                  >
+                    #mindfulness
+                  </span>
+
+                  <span
+                    class="bg-[#f1f1ef] rounded-full px-4 py-2 text-sm font-semibold"
+                  >
+                    #design-ethics
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ideas -->
+            <div class="bg-white rounded-2xl p-8 min-h-[310px] shadow-sm">
+              <div class="flex justify-between mb-7">
+                <span
+                  class="bg-[#e4f0e6] text-[#31533b] rounded-full px-4 py-1 text-sm font-semibold"
+                >
+                  Ideas
+                </span>
+
+                <span class="text-gray-500"> 📌 </span>
+              </div>
+
+              <h3 class="text-2xl font-semibold mb-4">Morning Ritual Ideas</h3>
+
+              <p class="text-gray-500 leading-8">
+                1. Cold water therapy <br />
+                2. 5 minutes of focused breathing <br />
+                3. Tea ceremony without screens...
+              </p>
+
+              <span
+                class="inline-block mt-9 bg-[#f1f1ef] rounded-full px-4 py-2 text-sm font-semibold"
+              >
+                #wellness
+              </span>
+            </div>
+
+            <!-- office -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+              <!-- image area -->
+              <div class="h-44 bg-gray-200 relative">
+                <!-- put your image here -->
+                <img src="" class="w-full h-full object-cover">
+
+                <span
+                  class="absolute left-10 -bottom-3 bg-[#eeeeeb] rounded-full px-5 py-1 text-sm text-gray-600"
+                >
+                  Work
+                </span>
+              </div>
+
+              <div class="p-8 pt-10">
+                <h3 class="text-2xl font-semibold mb-4">
+                  Office Redesign Notes
+                </h3>
+
+                <p class="text-gray-500 leading-8">
+                  Need to prioritize ergonomic comfort and natural light
+                  diffusio...
+                </p>
+              </div>
+            </div>
+
+            <!-- grocery -->
+            <div class="bg-white rounded-2xl p-8 min-h-[250px] shadow-sm">
+              <span
+                class="bg-[#eeeeeb] rounded-full px-4 py-1 text-sm text-gray-600"
+              >
+                Personal
+              </span>
+
+              <h3 class="text-2xl font-semibold mt-7 mb-4">
+                Weekend Grocery List
+              </h3>
+
+              <p class="text-gray-500 leading-8">
+                <span class="text-green-600">•</span>
+                Fresh ginger & mint <br />
+
+                <span class="text-green-600">•</span>
+                Organic honey
+              </p>
+            </div>
+
+            <!-- project -->
+            <div class="bg-white rounded-2xl p-8 min-h-[250px] shadow-sm">
+              <div class="flex justify-between mb-7">
+                <span
+                  class="bg-[#eeeeeb] rounded-full px-4 py-1 text-sm text-gray-600"
+                >
+                  Work
+                </span>
+
+                <span class="text-sm text-gray-500"> Mar 12 </span>
+              </div>
+
+              <h3 class="text-2xl font-semibold mb-4">Project Alpha Review</h3>
+
+              <p class="text-gray-500 leading-8">
+                The feedback from the initial user group was surprisingly
+                positive regarding the soft-focus UI...
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+
+      const closeBtn = document.getElementById("closeBtn");
+
+      const sidebar = document.getElementById("sidebar");
+
+      const overlay = document.getElementById("overlay");
+
+      function openSidebar() {
+        sidebar.classList.remove("-translate-x-full");
+
+        overlay.classList.remove("hidden");
+      }
+
+      function closeSidebar() {
+        sidebar.classList.add("-translate-x-full");
+
+        overlay.classList.add("hidden");
+      }
+
+      menuBtn.addEventListener("click", openSidebar);
+
+      closeBtn.addEventListener("click", closeSidebar);
+
+      overlay.addEventListener("click", closeSidebar);
+    </script>
+  </body>
+</html>
